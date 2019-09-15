@@ -8,7 +8,7 @@ class FanProject extends Component {
   state={
     isSignedIn: false,
     value: "",
-    humidity: ,
+    humidity: 0
 
   }
 
@@ -39,11 +39,13 @@ class FanProject extends Component {
     this.setState({value: event.target.value});
     this.state.humidity = this.state.value;
 
+
     var data = {
       name: firebase.auth().currentUser.displayName,
       humidity: this.state.humidity
     }
 
+    console.log(firebase.auth().currentUser.userId);
     writeUserData(firebase.auth().currentUser.userId, data.name, data.humidity);
 
   }
