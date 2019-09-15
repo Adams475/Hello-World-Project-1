@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Home from './Home';
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import * as firebase from 'firebase';
 import './App.css';
@@ -56,15 +55,10 @@ class FanProject extends Component {
               <div>
                 <form>
                   <input type = "text" value={this.state.value} onChange={this.handleChange}>
-                  </input><button onClick={this.DisplayNumber}>Enter</button>
+                  </input><button className = "enterButton" onClick={this.DisplayNumber}>Enter</button>
                 </form><dev className = "humidityNumber">{this.state.humidity}</dev>
               </div>
             </div>
-
-
-
-
-
             <div className = "exitButton"><button type="button" className="btn btn-primary" onClick={()=>firebase.auth().signOut()}>Sign Out</button></div>
             </div>
           </div>
