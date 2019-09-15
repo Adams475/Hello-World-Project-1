@@ -4,10 +4,12 @@ import * as firebase from 'firebase';
 import './App.css';
 
 class FanProject extends Component {
+
   state={
     isSignedIn: false,
     value: "",
-    humidity: 0
+    humidity: ,
+
   }
 
   uiConfig = {
@@ -36,7 +38,16 @@ class FanProject extends Component {
     event.preventDefault();
     this.setState({value: event.target.value});
     this.state.humidity = this.state.value;
+
+    var data = {
+      name: firebase.auth().currentUser.displayName,
+      humidity: this.state.humidity
+    }
+
+    writeUserData(firebase.auth().currentUser.userId, data.name, data.humidity);
+
   }
+
 
   render(){
     return(
@@ -56,7 +67,7 @@ class FanProject extends Component {
                 <form>
                   <input type = "text" value={this.state.value} onChange={this.handleChange}>
                   </input><button className = "enterButton" onClick={this.DisplayNumber}>Enter</button>
-                </form><dev className = "humidityNumber">{this.state.humidity}</dev>
+                </form><div className = "humidityNumber">{this.state.humidity}</div>
               </div>
             </div>
             <div className = "exitButton"><button type="button" className="btn btn-primary" onClick={()=>firebase.auth().signOut()}>Sign Out</button></div>
@@ -72,5 +83,13 @@ class FanProject extends Component {
     )
   }
 }
+
+function writeUserData(userId, name, num) {
+  firebase.database().ref('Users/' + userId).set({
+    username: name,
+    humidity : num
+  });
+}
+
 
 export default FanProject;
