@@ -6,9 +6,38 @@
 .googleSignIn{
     text-align: center;
     justify-content: center;
-
+    padding: 60px;
 }
 
 .app{
   background-color: lightblue;
+}
+
+.title{
+  text-align: center;
+  padding: 360px;
+}
+
+.exitButton{
+  text-align: right;
+
+
+}
+
+.welcome{
+  padding: 20px;
+  font-size: 80px;
+}
+
+.introText{
+  padding: 40px;
+  font-size: 25px;
+}
+
+p span{
+  display: block;
+}
+
+.humidityNumber{
+  font-size: 60px;
 }
