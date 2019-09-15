@@ -1,13 +1,14 @@
 {
-  "name": "mywebsite",
+  "name": "Hello-World-Project-1",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "babel": "^6.23.0",
     "bootstrap": "^4.3.1",
     "create-react-app": "^3.1.1",
     "firebase": "^6.6.1",
     "gh-pages": "^2.1.1",
+    "git": "^0.1.5",
     "re-base": "^4.0.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
@@ -40,7 +41,7 @@
   "main": "index.js",
   "devDependencies": {},
   "keywords": [],
-  "author": "",
+  "author": "adams475",
   "license": "ISC",
-  "hompage":"https://adams475.github.io/mywebsite"
+  "hompage": "https://adams475.github.io/Hello-World-Project-1"
 }
