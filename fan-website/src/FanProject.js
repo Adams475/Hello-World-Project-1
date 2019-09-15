@@ -58,18 +58,20 @@ class FanProject extends Component {
           //This is the logged in screen
           <div>
             <div className = "SignIn"><h1>Signed In!</h1>
-
+            <div className = "filler2"></div>
             <div className = "welcome"><h4> Welcome {firebase.auth().currentUser.displayName}</h4></div>
             <div className = "introText">
               <p>
-                <span>This allows you to control your fan, and choose when you want it to turn on based on the humidity. </span>
-                <span>Please input the humidity level at which you want the fan to turn on.</span>
+                <span>This allows you to control your fan, and choose when you want it to turn on based on the comfort level (calculated from humidity and dew point). </span>
+                <span>Please input the comfort level at which you want the fan to turn on. Below are examples of geologically preffered levels:</span>
+                <span>Midwest - 14.4, Pacific Southwest - 10.2</span>
               </p>
               <div>
+              <div className = "filler2"></div>
                 <form>
                   <input type = "text" value={this.state.value} onChange={this.handleChange}>
                   </input><button className = "enterButton" onClick={this.DisplayNumber}>Enter</button>
-                </form><div className = "humidityNumber">{this.state.humidity}</div>
+                </form><div className = "humidityNumber">Selected Comfort Level: {this.state.humidity}</div><div className = "filler"></div>
               </div>
             </div>
             <div className = "exitButton"><button type="button" className="btn btn-primary" onClick={()=>firebase.auth().signOut()}>Sign Out</button></div>
@@ -77,7 +79,7 @@ class FanProject extends Component {
           </div>
           :
           //This is the log in screen
-          <div className = "title"><h1>Welcome to FanController</h1><StyledFirebaseAuth className="googleSignIn" uiConfig={this.uiConfig}
+          <div className = "title"><h1>Welcome to TheFANtasticController</h1><StyledFirebaseAuth className="googleSignIn" uiConfig={this.uiConfig}
           firebaseAuth={firebase.auth()}
           /></div>
         }

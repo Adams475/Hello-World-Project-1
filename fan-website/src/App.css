@@ -14,7 +14,15 @@
 }
 
 .enterButton{
-  
+
+}
+
+.filler{
+  padding: 164px;
+}
+
+.filler2{
+  padding: 25px
 }
 
 .title{
@@ -29,7 +37,7 @@
 }
 
 .welcome{
-  padding: 20px;
+  padding: 10px;
   font-size: 80px;
 }
 
@@ -43,6 +51,6 @@ p span{
 }
 
 .humidityNumber{
-  font-size: 60px;
+  font-size: 40px;
   padding: 40px;
 }
